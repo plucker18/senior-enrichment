@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: cornsilk;
+}
+
+img {
+  max-width: 40%;
+}
+
+h1 {
+  text-align: center;
+}
+
+header {
+  background-color: midnightblue;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header .nav-item {
+  width: 50%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+header h1 {
+  color: palegoldenrod;
+  text-align: center;
+}
+header h2 {
+  color: coral;
+}
+
+#home {
+  display: flex;
+  justify-content: center;
+  
+}
