@@ -19,7 +19,7 @@ export default class SingleCampus extends Component {
 
   componentDidMount() {
     const campusId = this.props.match.params.campusId;
-    console.log(campusId)
+    console.log(campusId);
     let returnedCampus;
     axios.get(`/api/campuses/${campusId}`)
       .then(res => res.data)
@@ -65,11 +65,23 @@ export default class SingleCampus extends Component {
       });
   }
 
+  removeStudent(event) {
+    event.preventDefault();
+    const studentId = Number(event.target.value);
+
+    axios.put(`/api/students/${studentId}`, {campusId: null})
+      .then(res => {
+        const { id, name, email } = res.data;
+        const removedStudent = { id, name, email };
+        this.setState({allStudents: [...this.state.allStudents, removedStudent]});
+      });
+  }
+
   render() {
 
-    const { campus, allStudents } = this.state;
+    const { campus } = this.state;
     const students = campus.students;
-console.log('INSIDE RENDER', allStudents)
+
     return (
       <div>
         <h1>{campus.name}</h1>
@@ -92,6 +104,7 @@ console.log('INSIDE RENDER', allStudents)
                 <Link to={`/students/${students[student].id}`}>
                   {`Name: ${students[student].name} -- Email: ${students[student].email}`}
                 </Link>
+                <button value={students[student].id} onClick={this.removeStudent}>Remove Student</button>
               </li>
             ))
           }

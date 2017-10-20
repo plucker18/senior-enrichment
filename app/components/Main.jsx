@@ -16,13 +16,15 @@ export default function Main () {
         <div className="header">
           <Header />
         </div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/campuses" component={Campuses} />
-          <Route path="/campuses/:campusId" component={SingleCampus} />
-          <Route exact path="/students" component={Students} />
-          <Route path="/students/:id" component={SingleStudent} />
-        </Switch>
+        <div className="body-container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/campuses" component={Campuses} />
+            <Route path="/campuses/:campusId" component={SingleCampus} />
+            <Route exact path="/students" component={Students} />
+            <Route path="/students/:id" component={SingleStudent} />
+          </Switch>
+        </div>
       </div>
     </Router>
   );

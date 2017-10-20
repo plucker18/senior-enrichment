@@ -10,3 +10,7 @@ const Home = () => {
 };
 
 export default Home;
+
+// <div>
+// <h1>WE ALL FLOAT UP HERE</h1>
+// </div>

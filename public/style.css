@@ -33,8 +33,24 @@ header h2 {
   color: coral;
 }
 
+.body-container {
+  margin: 2em;
+}
+
 #home {
   display: flex;
   justify-content: center;
-  
+}
+
+#home img {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#home h1 {
+  font-size: 2em;
+  font-weight: bold;
+  font-style: verdana;
+  color: midnightblue;
 }

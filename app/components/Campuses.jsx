@@ -43,7 +43,7 @@ export default class Campuses extends Component {
   render() {
 
     const { campuses } = this.state;
-    console.log(this.state)
+
     return (
       <div className="campuses">
         <h1>Campuses</h1>
@@ -59,7 +59,7 @@ export default class Campuses extends Component {
             <input type="submit" value="Submit" />
           </label>
         </form>
-        <ul value={campuses}>
+        <ul value={campuses} className="campus-images">
           {
             campuses.map(campus => (
               <li key={campus.id}>
