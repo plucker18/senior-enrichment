@@ -11,8 +11,7 @@ export default class Campus extends Component {
       student: {},
       studentName: '',
       studentEmail: '',
-      selectedCampusId: '',
-      studentDeleted: false
+      selectedCampusId: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,21 +60,17 @@ export default class Campus extends Component {
     const studentName = event.target.name;
 
     axios.delete(`/api/students/${studentId}`, {studentId})
-      .then(res => res.data)
-      .then(student => {
+      .then(res =>  {
         this.setState({
           student: `${studentName} kicked out of the solar system!`,
-          students: [...this.state.students],
-          studentDeleted: true
-        });
-        console.log(student)
+          students: [...this.state.students]
+      });
       });
   }
 
   render() {
 
     const { student, campuses } = this.state;
-    console.log(this.state.studentDeleted)
 
     return (
       <div>
